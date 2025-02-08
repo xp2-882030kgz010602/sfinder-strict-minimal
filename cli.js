@@ -71,9 +71,14 @@ async function main(filename) {
     }
   }
   
-  const set = await findBestSet(sets);
-  
-  const solutions = set.map(n => {
+  //const set = await findBestSet(sets);
+
+  sets.map(set=>{
+    console.log("");
+    set.map(solution=>console.log(solution.key))
+  });
+
+/*  const solutions = set.map(n => {
     const sol = solutionMap.get(n.key);
     const alters = n.alter.map(n => solutionMap.get(n.key));
     return {
@@ -88,7 +93,7 @@ async function main(filename) {
     solutions,
     patternCount: patterns.length,
     successCount: successPatterns.length
-  });
+  });*/
 }
 
 async function findBestSet(sets) {
