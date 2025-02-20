@@ -76,10 +76,12 @@ async function main(filename) {
   sets.map(set=>{
     console.log("");
     set.map(solution=> {
-      console.log(solution.key);
+      var text="[ "+solution.key;
       for (const alterSolution of solution.alter) {
-        console.log("or " + alterSolution.key);
+        text+="\nor " + alterSolution.key;
       }
+      text+=" ]";
+      console.log(text);
     })
   });
 
