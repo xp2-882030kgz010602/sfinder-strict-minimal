@@ -75,7 +75,12 @@ async function main(filename) {
 
   sets.map(set=>{
     console.log("");
-    set.map(solution=>console.log(solution.key))
+    set.map(solution=> {
+      console.log(solution.key);
+      for (const alterSolution of solution.alter) {
+        console.log("or " + alterSolution.key);
+      }
+    })
   });
 
 /*  const solutions = set.map(n => {
